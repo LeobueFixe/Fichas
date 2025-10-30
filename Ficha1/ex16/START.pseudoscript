@@ -1,0 +1,9 @@
+entrada("Insira o ano em que nasceu:", ano)
+
+se ano Não INT:
+    imprime("Tente novamente")
+senao:
+    se ano <= 2009:
+        imprime("Ja pode votar.")
+    senao:
+        imprime("Ainda não pode votar.")

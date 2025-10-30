@@ -1,0 +1,8 @@
+lista = [1,2,3,4,5]
+enquanto numero NAO INT:
+    imprime("Qual numero deseja excluir? {lista}")
+    entrada("Insira o valor que deseja excluir:", numero)
+    se numero NAO INT OU numero NAO em lista:
+        entrada("Por favor insira um numero da lista:", numero)
+    senao:
+        lista.eliminar(numero)

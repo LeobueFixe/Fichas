@@ -1,0 +1,10 @@
+imprime("O programa vai continuar a pedir valores, quando ja não querer inserir mais valores basta digitar STOP.")
+lista = []
+enquanto numero == "STOP" OU numero NAO INT OU FLOAT:
+    entrada("Insira um número para adicionar a lista:", numero)
+    se numero == "STOP"
+        imprime("A lista ficou assim {lista}.")
+    senao numero NAO INT OU FLOAT:
+        entrada("Por favor insira um número:", numero)
+    senao:
+        lista.adicionar(numero)

@@ -1,0 +1,33 @@
+imprime("Este programa vai trocar uma letra por outra, de maneira a que todas as letras escolhidas na palavra sejam trocadas pela outra.")
+letra2 = ""
+letra = ""
+lista = []
+cI = 0
+
+funcao substituir(letra, letra2, lista):
+    enquanto letra em lista = true:
+        se lista[cI] == letra:
+            lista[cI] = letra2
+        cI++
+
+    palavra = lista[]
+    retorne palavra
+
+enquanto letra em lista = false OU letra, letra2, palavra != TEXTO:  
+    entrada("Insira uma palavra:", palavra)
+    se palavra != TEXTO:
+        entrada("Tente novamente:", palavra)
+    senao:
+        separar palavra em lista[]
+        entrada("Insira qual letra vai ser substituida:", letra)
+        se letra != TEXTO:
+            entrada("Erro, tente novamente:", letra)
+        senao letra em lista = false:
+            entrada("Essa letra não esta na lista escolha outra:", letra)
+        senao
+            entrada("E a letra que vai substitui-la:", letra2)
+            se letra2 != TEXTO:
+                entrada("Erro, tente novamente:", letra2)
+
+substituir(letra, letra2, lista)
+imprime("A palavra ficou assim: {palavra}")

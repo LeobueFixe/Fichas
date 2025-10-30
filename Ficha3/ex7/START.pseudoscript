@@ -1,0 +1,38 @@
+funcao menu()->
+    entrada("Agenda:
+        1-Adicionar compromisso
+        2-Mostrar ordem
+        3-Procurar por prioridade
+        4-Sair
+        R:", opcao)
+    
+    retorne opcao
+
+compromissos = ()
+cI = 1
+
+enquanto opcao != 4:
+    menu()
+    opcao = menu()
+    se opcao == 1:
+        entrada("Insira a prioridade:", ordem)
+        entrada("Insira um nome:", nome)
+
+        se ordem em compromissos.chaves():
+            imprime("Ja tem um compromisso nessa prioridade.")
+            continua()
+        compromisso[chave] = nome
+
+    se opcao == 2:
+        cada chave, valor em compromissos:
+            se chave == (cI):
+                imprime(valor)
+                cI++
+        continua()
+
+    se opcao == 3:
+        entrada("Insira o número da prioridade:", ordem)
+        cada valor, chave em compromissos:
+            se chave == ordem:
+                imprime(valor)
+        continua()

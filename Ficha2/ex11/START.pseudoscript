@@ -1,0 +1,16 @@
+imprime("Este programa pode repetir o numero 3 ou o número na terceira posição do array. Escolha qual é a opção que vai desejar.")
+cI = 0
+lista = [1,2,69,4,5]
+enquanto numero NAO INT:
+    entrada("Opções:/n 1-numero 3/n2-repetir o 3 elemento/nEscolha uma opção:",numero)
+    se 1 > numero > 2 OU NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        se numero == 1:
+            enquanto i < 5:
+                imprime("3/n")
+                cI++
+        senao numero == 2:
+            enquanto cI < 5:
+                imprime("{lista[2]}/n")
+                cI++

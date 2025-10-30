@@ -1,0 +1,96 @@
+funcao menu():
+    entrada("Bem vindo a biblioteca online:
+        1-Mostrar todos os livros.
+        2-Requisitar um livro.
+        3-Entregar um livro.
+        4-Sair
+        R:", opcao)
+
+    retorna opcao
+
+dicionario = (
+    'Sapiens: Uma Breve História da Humanidade' -> (
+        'estilo' -> 'História',
+        'paginas' -> 448,
+        'Autor' -> 'Yuval Noah Harari',
+        'requisitado' -> false
+
+    ),
+    'Orgulho e Preconceito' -> (
+        'estilo' -> 'Romance',
+        'paginas' -> 416,
+        'Autor' -> 'Jane Austen',
+        'requisitado' -> false
+    ),
+    '1984' -> (
+        'estilo' -> 'Ficção Científica / Distopia',
+        'paginas' -> 328,
+        'Autor' -> 'George Orwell',
+        'requisitado' -> false
+    ),
+    'O Senhor dos Anéis: A Sociedade do Anel' -> (
+        'estilo' -> 'Fantasia',
+        'paginas' -> 576,
+        'Autor' -> 'J.R.R. Tolkien',
+        'requisitado' -> false
+
+    ),
+    'O Código Da Vinci' -> (
+        'estilo' -> 'Suspense / Mistério',
+        'paginas' -> 480,
+        'Autor' -> 'Dan Brown',
+        'requisitado' -> false
+    )
+)
+
+professor = ('JorgeJocas' -> true, 'Amélia Boa Vista' -> true, 'Joaquim Jorgin' -> true)
+cartao = true
+
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        cada chave em livro.chaves():
+            imprime(chave)
+        entrada("Deseja procurar um livro?(Y/N)
+        R:", resposta)
+        se resposta == 'Y':
+            entrada("Insira o nome do livro:", nome)
+            cada chave em livro.chaves():
+                se chave == nome:
+                    imprime(chave)
+            continua()
+        continua()
+    se opcao == 2:
+        entrada("Escolha a forma de requisitar:
+            1-Cartão da escola
+            2-Para um professor
+            R:", resposta)
+        se resposta NAO INT E resposta != 1 OU resposta != 2:
+            cada chave em livro.chaves():
+                se livro("requisitado") == false:
+                    imprime(chave)
+            entrada("Insira o nome do livro:", nome)
+            se nome em livro.chaves():
+                se nome["requisitado"] == false:
+                    imprime("Esse livro ja foi requisitado por favor escolha outro.")
+                    continua()
+                se resposta == 1:
+                    se cartao == false:
+                        imprime("O aluno ja requisitou um livro e ainda não o devolveu, por favor devolva o outro livro antes de requisitar o proximo.")
+                        continua()
+                    cartao = false
+
+                se resposta == 2:
+                    entrada("Insira o nome do professor:", nome_professor)
+                    se nome_professor em professor.chaves():
+                        se professor(nome_professor) == false
+                            imprime("Esse professor ja tem um livro requisitado, tem de entregar o outro antes de requisitar outro.")
+                            continua()
+                        professor(nome_professor) = false
+                cada chave, valor em livro:
+                    se chave == nome:
+                        livro['requisitado'] = true
+                continua()
+        continua()
+                

@@ -1,0 +1,68 @@
+funcao menu():
+    entrada("Escolha uma opcao:
+        1-Adicionar jogardor
+        2-Alterar pontuação
+        3-Mostrar tabela
+        4-Sair
+        R:", opcao)
+
+    retorne opcao
+
+temporaria = 0
+contadorPositivo = 0
+contadorNegativo = -1
+jogadores = ()
+
+enquanto opcao != 4:
+    menu()
+    opcao = menu()
+    se opcao == 1:
+        entrada("Insira o nome do jogador", nome)
+        entrada("Insira a pontuação dele:", pontuacao)
+
+        se nome NAO INT OU pontuacao NAO INT:
+            imprime("Erro, dados invalidos")
+            continua()
+        jogador[nome] = pontuacao
+    se opcao == 2:
+        entrada("Insira o nome do jogador:", nome)
+        se nome em jogadores.chaves():
+            entrada("Insira a nova pontuação:", pontuacao)
+            jogadores[nome] = pontuacao
+            continua()
+        imprime("Nome invalido")
+    se opcao == 3:
+        ranking = []
+        enquanto contadorPositivo < tamanho(jogadores):
+            cada chave, valor em jogadores:
+                valorMax = findMax(jogadores)
+                se chave EM ranking:
+                    continua()
+                ranking.adicionar(chave)
+        
+        cada jogador em ranking:
+            imprime("{jogador}: {jogadores[jogador]}")
+                  
+        # enquanto contadorPositivo < tamanho(jogadores):
+        #     cada valor,chave em jogadores:
+        #         se valor > temporaria E valor > lista[-1] :
+        #             se lista[-1] == 0:
+        #                 lista[-1] == valor
+        #                 continua()
+        #             temporaria = valor
+        #     contadorPositivo++
+        #     lista.adicionar(temporaria)
+        
+        # contadorPositivo = 0
+        # enquanto contadorPositivo < tamanho(jogadores):
+        #     cada valor, chave em jogadores:
+        #         se valor == lista[contadorNegativo]:
+        #             imprime("{chave}: {valor}")
+               
+        #     contadorPositivo++
+        #     contadorNegativo--
+
+        
+
+                
+                

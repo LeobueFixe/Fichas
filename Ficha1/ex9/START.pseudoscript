@@ -1,0 +1,10 @@
+entrada("Insira o valor do item:", item)
+
+se valor NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se item > 100:
+        total = item - (item * 0.1)
+        imprime("O valor total é: {total}")
+    senao:
+        imprime("O valor total continua a ser {item}")

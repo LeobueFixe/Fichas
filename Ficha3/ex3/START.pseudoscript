@@ -1,0 +1,136 @@
+funcao menu():
+    disciplinas = ['Ciencias', 'Programação', 'Arquitetura de sistemas', 'Hardware']
+    turmas = ()
+    alunos = ()
+
+    entrada("Bem vindo ao programa.
+
+        1-Disciplinas.
+        2-Turmas.
+        3-Alunos.
+        4-Sair.
+        R:", opcao)
+          
+    retorne opcao
+
+funcao opcaoInvalida():
+    imprime("Opção invalida, tente novamente.")
+
+funcao adicionarAluno(alunos):    
+    entrada("Nome:", nome)
+    entrada("Sobrenome:", sobrenome)
+    entrada("Idade:", idade)
+    entrada("Turma:", turma)
+    entrada("Email:", email)
+
+    nomeCompleto = "{nome} {sobrenome}"
+    media = calcularMedia(disciplinas)
+    alunos[nomeCompleto] = ('nome' -> nome, 'sobrenome' -> sobrenome, 'idade' -> idade, 'turma' -> turma, 'email' -> email, 'media' -> media)
+
+funcao alterarAluno(nomeCompleto):
+    cada chave, valor em nomeCompleto:
+        entrada("{chave}:", dado)
+        nomeCompleto[chave] = dado
+    immprime("Dados alterados com sucesso.")
+
+funcao calcularMedia(disciplinas):
+    cI = 0
+    media = 0
+    enquanto cI < tamanho(disciplinas):
+        entrada("Insira a nota da {disciplinas[cI}:", nota)
+        media = media + nota
+    media = media/(cI + 1)
+
+    retorne media
+
+funcao adicionarTurma(turmas):
+    entrada("Insira o nome da turma:", turma)
+    entrada("Insira o número de alunos da turma:", numeroAlunos)
+    se turma em turmas.chaves():
+        imprime("Já existe uma turma com esse nome. Tente novamente")
+        retorne
+    se numero NAO INT:
+        imprime("Número de alunos Invalido.")
+        retorne
+    turmas[turma] = numeroAlunos
+
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        entrada("
+        1-Mostrar disciplinas
+        2-Adicionar disciplina
+        R:", resposta)
+
+        se resposta == 1:
+            imprime(disciplinas)
+            continua()
+        se resposta == 2:
+            entrada("Insira o nome da disciplina: ", disciplina)
+            disciplinas.adicionar(disciplina)
+            continua()
+        
+        opcaoInvalida()
+
+    se opcao == 2:
+        entrada("
+        1-Mostrar turmas
+        2-Adicionar turma
+        R:", resposta)
+        
+        se resposta == 1:
+            cada valor, chave em turmas:
+                imprime("{chave}: {valor}Alunos")
+            entrada("Deseja ver os alunos das turmas?(Y/N)
+                    R:", resposta)
+            se resposta == Y
+                entrada("Se desejar ver os alunos de uma turma, insira o nome da turma:", turmAluno)
+                se turmAlunos em turmas.chaves():
+                    cada valor em alunos.valores():
+                        se valor[turma] == turmAluno:
+                            nomeCompleto = "{valor[nome]} {valor[sobrenome]}"
+                            imprime(nomeCompleto)
+            continua()
+
+        se resposta == 2:
+            adicionarTurma(turmas)
+            continua()
+        opcaoInvalida()
+
+    se opcao == 3:
+        entrada("
+        1-Mostrar todos os alunos.
+        2-Alterar dados.
+        3-Adicionar aluno.
+        R:", resposta)
+        
+        se resposta == 1:
+            cada chave, valor em alunos:
+                imprime("
+                {chave}:
+                {valor.idade} {valor.turma} {valor.media}
+                {valor.email}")
+            continua()
+
+        se resposta == 2:
+            cada valor em alunos.valores():
+                imprime(valor)
+            enquanto resposta != 2:
+                entrada("Escolha uma opção
+                    1-Alterar dados
+                    2-Sair",resposta)
+                se resposta == 1:
+                    entrada("Insira o nome completo do aluno:", nomeCompleto)
+                    se nomeCompleto em alunos.chaves():
+                        alterarAlunos(nomeCompleto)
+                        continua()
+                opcaoInvalida()
+            
+            continua()
+        
+        se resposta == 3:
+            adicionarAluno(alunos)
+        opcaoInvalida()
+    
+    opcaoInvalida()

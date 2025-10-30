@@ -1,0 +1,9 @@
+entrada("Insira um ano:", ano)
+
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se ano%4 == 0:
+        imprime("É um ano bissexto")
+    senao:
+        imprime("Não é um ano bissexto")

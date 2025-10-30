@@ -1,0 +1,28 @@
+imprime("O programa vai comparar todos os valores inseridos e verificar se é um palindrome:")
+lista = []
+quantidade = tamanho(lista)
+cI = 0
+cL = -1
+diferentes = 0
+iguais = 0
+
+enquanto palavra != TEXTO:
+    entrada("Insira uma palavra:", palavra)
+    se palavra != TEXTO:
+        entrada("Tente novamente:", palavra)
+    senao:
+        separar palavra em lista[]
+
+enquanto cI < lista:
+    se lista[cI] == lista[cL]:
+        iguais++
+    senao:
+        diferentes++
+
+    i++
+    l--
+    
+se diferentes == 0:
+    imprime("É um palíndromo.")
+senao:
+    imprime("Não é um palíndromo.")

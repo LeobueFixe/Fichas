@@ -1,0 +1,11 @@
+entrada("Insira um número:", numero)
+
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se numero < 0:
+        imprime("É um número negativo.")
+    senao numero > 0:
+        imprime("É um número positivo.")
+    senao:
+        imprime("É zero.")

@@ -1,0 +1,87 @@
+voos = ('França' -> 60, 'Australia' -> 56, 'Dubai' -> 98, 'Irlanda' -> 67)
+total = 0
+carros = (
+    'Fiat Uno' -> ('preco' -> 120, 'marca' -> 'Fiat', 'local' -> 'França'),
+    'Toyota Corolla' -> ('preco' -> 250, 'marca' -> 'Toyota', 'local' -> 'Dubai'),
+    'Honda Civic' -> ('preco' -> 230, 'marca' -> 'Honda', 'local' -> 'Irlanda'),
+    'Chevrolet Onix' -> ('preco' -> 180, 'marca' -> 'Chevrolet', 'local' -> 'Australia')
+    )
+hoteis = (
+    'Chgsy' -> ('preco' -> 80, 'local' -> lista['França', 'Australia']),
+    'TacoDourado' -> ('preco' -> 120, 'local' -> lista['França', 'Dubai', 'Irlanda'])
+)
+marcacoes = ()
+
+funcao menu():
+    entrada("
+    1-Adicionar reserva
+    2-Mostrar reservas
+    3-Eliminar reserva
+    4-Sair
+    R:", opcao)
+
+    se opcao NAO INT:
+        imprime("Erro tente novamente")
+    retorne opcao
+
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        cada chave, valor em voos:
+            imprime("{chave}: {valor}")
+        entrada("Para qual pais deseja ir?", viagem)
+        se viagem em voos.chaves():
+            total = valor
+            entrada("Daqui a quanto tempo deseja ir?", marcacao)
+            se marcacao NAO INT:
+                imprime("Erro tente novamente.")
+                continua()
+            entrada("Vai ficar quanto tempo fora?", duracao)
+            se duracao NAO INT.
+                imprime("Erro tente novamente.")
+                continua()
+            cada chave, valor em carros:
+                se valor.local == viagem:
+                    imprime("{chave}: 
+                    Preço por dia:{valor.preco}
+                    Marca: {valor.marca}")
+            entrada("Escolha um veiculo:", carro)
+            se carro em carros.chaves():
+                entrada("Durante quantos dias vai desejar alugar o veiculo?", alugar)
+                se alugar > duracao:
+                    entrada("Por favor, alugue o carro apenas enquanto estiver fora.", alugar)
+                    continua()
+                total = total + (carro.preco * alugar)
+                imprime("Agora basta escolher um dos seguintes hoteis para ficar:")
+                cada chave, valor em hoteis:
+                    se valor.local == viagem:
+                        imprime("{chave}: {preco} por noite
+                        Locais disponiveis {local}")
+                entrada("Escolha um hotel:", hotel)
+                se hotel em hoteis.chaves():
+                    entrada("Insira um nome para esta marcação:", nome)
+                    total = total + (hoteis.preco * marcacao)
+                    marcacoes[nome] = ('pais' -> viagem, 'marcacao' -> marcacao, 'duracao' -> duracao, 'carro' -> carro, 'hotel' -> hotel, 'total' -> total)
+                continua()
+    se opcao == 2:
+        cada valor, chave em marcacoes:
+            imprime('{chave}:Pais{valor.pais}
+            Daqui a:{valor.marcacao} Duração:{valor.duracao}
+            Carro alugado:{valor.carro}
+            Hotel: {valor.hotel}
+            Valor total: {valor.total}')
+        continua()
+    se opcao == 3:
+        entrada("Insere o nome da reserva: ", nome)
+        eliminar_marcacao = ()
+        cada chave,valor em marcacoes:
+            se chave == nome:
+                continua()
+            eliminar_marcacao = marcacoes
+        
+        marcacoes = eliminar_marcacao
+        imprime("Eliminado com sucesso.")
+
+    
+                    

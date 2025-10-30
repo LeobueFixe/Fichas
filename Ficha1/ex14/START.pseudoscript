@@ -1,0 +1,18 @@
+entrada("Insira um número inteiro:", numero)
+
+i = 1
+total = 0
+
+se numero NÃO INT:
+    imprime("Tente novamente.")
+senao:
+
+    enquanto i < numero:
+        se numero%i == 0:
+            total = total + i
+        i++
+
+    se total == numero:
+        imprime("É um número perfeito.")
+    senao:
+        imprime("Não é um número perfeito.")

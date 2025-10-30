@@ -1,0 +1,149 @@
+modelo Ficheiro:
+    construtor():
+        Ficheiro.documentos = ()
+    
+    funcao criarFicheiro(caminho, ficheiro):
+        se caminho == null E ficheiro == null:
+            imprime("Escreve o seu texto aqui. Quando quiser sair basta escrever (SAIR)")
+            enquanto texto != "SAIR":
+                entrada("", texto)
+                documento = documento + " " + texto
+            Ficheiro.guardarFicheiro(documento)
+            quebra()
+        imprime("Altere o texto que quiser, quando terminar basta escrever(GUARDAR)")
+        enquanto texto != "GUARDAR":
+            entrada("", texto)
+            documento = documento + " " + texto
+        Ficheiro.documentos(caminho -> ("{nome}.txt" -> documento))
+
+    funcao guardarFicheiro(documento)
+        valido = false
+        entrada("Guardar  Guardar como", resposta)
+        enquanto valido == false:
+            se resposta == "Guardar":
+                entrada("Insira o nome do ficheiro:", nome)
+                Ficheiro.documentos = ("{nome}.txt" -> documento)
+                valido = true
+                continua()
+            se resposta == "Guardar como":
+                entrada("Escolha uma opção:
+                    1-Criar nova pasta
+                    2-Guardar ficheiro", opcao)
+                    se opcao == 1:
+                        enquanto opcao != 2:
+                            entrada("Escolha uma opção:
+                                1-Criar nova pasta
+                                2-Guardar ficheiro", opcao2)
+                            se opcao2 == 1:
+                                entrada("Insira o nome da pasta:", pasta)
+                                caminho = "{caminho}/{pasta}"
+                        entrada("Insira o nome do ficheiro:", nome)
+                        Ficheiro.documentos(caminho -> ("{nome}.txt" -> documento))
+                        valido = true
+                        continua()
+                    se opcao == 2:
+                        enquanto opcao != 2:
+                            entrada("Escolha uma opção:
+                                1-Abrir nova pasta
+                                2-Abrir ficheiro", opcao2)
+                            se opcao2 == 1:
+                                entrada("Insira o nome da pasta:", pasta)
+                                caminho = "{caminho}/{pasta}"
+                        se caminho em FIcheiro.documentos:
+                            entrada("Insira o nome do ficheiro:", nome)
+                            Ficheiro.documentos = (caminho -> ("{nome}.txt" -> documento))
+                            valido = true
+                            continua()
+                        imprime("Pasta não encontrada, por favor tente novamente.")
+                        continua()
+                    Ficheiro.opcaoInvalida()
+            FIcheiro.opcaoInvalida()
+
+    funcao opcaoInvalida():
+        imprime("Opção invalida, por favor tente novamente.")
+        continua()
+
+    funcao mostrarFicheiros():
+        cada chave em Ficheiro.documentos:
+            imprime(chave)
+        entrada("Deseja abrir algum ficheiro, ou pasta?(Y/N)/nR:", resposta)
+        se resposta == "Y":
+            entrada("Escolha uma opção:
+                1-Ficheiro
+                2-Pasta", opcao)
+            se opcao == 1:
+                entrada("Insira o nome do ficheiro:", nome)
+                abrirFicheiro(null, nome)
+                continua()
+            se opcao == 2:
+                entrada("Insira o caminho para o ficheiro:", caminho)
+                    se caminho em Ficheiro.documentos:
+                        entrada("Insira o nome do ficheiro:", nome)
+                        Ficheiro.abrirPasta(caminho, nome)
+                        continua()
+            FIcheiro.opcaoInvalida()
+        se resposta == "N":
+            continua()
+        FIcheiro.opcaoInvalida()
+    
+    funcao abrirFicheiro(caminho, ficheiro):
+        se caminho == null:
+            se ficheiro em Ficheiro.documentos:
+                imprime(documentos[ficheiro])
+            Ficheiro.opcaoInvalida()
+        se caminho em Ficheiro.documentos:
+            se ficheiro em documentos[caminho]:
+                imprime(documentos[caminho[ficheiro]])
+
+
+        entrada("Deseja alterar o documento?(Y/N)", resposta)
+        se resposta == "Y":
+            Ficheiro.criarFicheiro(caminho, ficheiro)
+
+
+
+    funcao eliminarFicheiro(caminho, ficheiro):
+        novoDicionario = ()
+        se caminho == null:
+            cada ficheiro em Ficheiro.documentos:
+                se documento == ficheiro:
+                    continua():
+                novoDicionario(ficheiro) = documento
+        se caminho em Ficheiro.documentos:
+            cada caminho em Ficheiro.documentos:
+                se documento == caminho:
+                    continua()
+                novoDicionario(caminho[ficheiro]) = documento
+        Ficheiro.documentos = novoDicionario     
+
+        retorne Ficheiro.documentos 
+
+
+funcao menu():
+    entrada("Bem vindo ao editor de Texto:
+    1-Criar novo ficheiro.
+    2-Mostrar ficheiros.
+    3-Abrir ficheiro.
+    4-Eliminar ficheiro.
+    5-Sair
+    R:", opcao)
+
+    retorne opcao
+
+user = Ficheiro
+enquanto opcao != 5:
+    opcao = menu()
+    menu()
+
+    se opcao == 1:
+        user.criarFicheiro(null, null)
+        continua()
+    se opcao == 2:
+        user.mostrarFicheiros()
+        continua()
+    se opcao == 3:
+        user.abrirFicheiro()
+        continua()
+    se opcao == 4:
+        user.eliminarFicheiro()
+        continua()

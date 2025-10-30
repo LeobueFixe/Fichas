@@ -1,0 +1,27 @@
+modelo Currency:
+    contrutor(t_moeda, t_moeda2):
+        Currency.dicionario = (
+            "euro" -> 1,
+            "dolar" -> 0.93,
+            "libra" -> 1.18,
+            "iene" -> 0.006,
+            "franco_suico" -> 1.04,
+            "dolar_canadiano" -> 0.68,
+            "dolar_australiano" -> 0.61,
+            "real" -> 0.18,
+            "yuan" -> 0.13,
+            "rupia" -> 0.011
+        )
+    
+    funcao conversor(de_moeda, para_moeda, quantidade):
+        se de_moeda E para_moeada em Currency.dicionario:
+            total = quantidade * (dicionario[de_moeda] / dicionario[para_moeda])
+            imprime("Total de {total} {para_moeda}")   
+            quebra()
+        imprime("Moeda não reconhecida. Por favor tente novamente")
+
+entrada("De:", de_moeda)
+entrada("Para:", para_moeda)
+entrada("Quantidade:", quantidade)
+user = Currency(de_moeda, para_moeda, quantidade)
+imprime(user.conversor())

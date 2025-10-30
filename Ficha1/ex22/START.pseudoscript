@@ -1,0 +1,9 @@
+entrada("Quanditade de Km:", km)
+entrada("Quantidade de dias:", dias)
+
+se km NÃO INT OU FLOAT E dias NÃO INT:
+    imprime("Tente novamente.")
+senao:
+    total = (dias * 50) + (km * 0.20)
+
+    imprime("Valor total a pagar: {total}")

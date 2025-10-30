@@ -1,0 +1,23 @@
+entrada("Insira um número:", numero)
+
+i = 0
+divisiveis = 0
+primo = false
+
+funcao num_primo(numero):
+    enquanto i > numero:
+        i++
+        se numero%i == 0:
+            divisiveis++
+
+    se divisiveis == 2:
+        retorne primo = true
+
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    num_primo(numero)
+    se primo == true:
+        imprime("O número é primo")
+    senao:
+        imprime("O número não é primo.")

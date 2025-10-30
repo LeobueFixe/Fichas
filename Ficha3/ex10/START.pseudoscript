@@ -1,0 +1,16 @@
+sinonimos = ('Feliz' -> 'alegre', 'Bonito' -> 'belo', 'Rápido' -> 'veloz', 'Triste' -> 'abatido', 'Inteligente' -> 'esperto')
+
+valido = false
+enquanto valido == false:
+    entrada("Insira uma plavra e o programa vai lhe devolver o sinonimo:", resposta)
+    se resposta NAO TEXTO:
+        entrada("Palavra invalida, tente novamente", resposta)
+    se resposta em sinonimos.valores() OU resposta em sinonimos.chaves():
+        cada chave, resposta em sinonimos:
+            se chave == resposta:
+                imprime("{resposta} = {chave}")
+                continua()
+            se valor == resposta:
+                imprime("{resposta} = {valor}")
+                continua()
+        valido = true

@@ -1,0 +1,31 @@
+funcao menu():
+    entrada("Bem vindo a calculador:
+        1-Multiplicação
+        2-Divisão
+        3-adição
+        4-Subtração
+        5-Sair
+        R:", opcao)
+    se 1 > opcao < 5: 
+        retorne opcao
+    imprime("Opção invalida, tente novamente.")
+
+modelo Calculadora:
+    funcao calcular(valor1, valor2, opcao):
+        se tipo == 1:
+            retorne ("A multiplicação dos dois valores é: {valor1*valor2}")
+        se tipo == 2:
+            retorne ("A divisão dos dois valores é: {valor1/valor2}")
+        se tipo == 3:
+            retorne ("A soma dos dois valores é: {valor1+valor2}")
+        se tipo == 4:
+            retorne ("A subtração dos dois valores é: {valor1-valor2}")
+
+enquanto opcao != 5:
+    opcao = menu()
+    menu()
+    entrada("Insira um valor:", valor1)
+    entrada("Insira outro valor:", valor2)
+    se 1 < opcao < 4:
+        user = calculadora(valor1, valor2, opcao)
+        imprime(user.calcular())

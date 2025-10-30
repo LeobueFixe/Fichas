@@ -1,0 +1,26 @@
+funcao menu():
+    entrada("Bem vindo ao programa
+        1-Adicionar produto.
+        2-Remover produto.
+        3-Terminar compra
+        R:", opcao)
+
+    retorne opcao
+    
+produtos = ('Carne Bovina' -> 7.99, 'Frango Assado' -> 10, 'Arroz' -> 2.99, 'Massa' -> 3.12)
+total = 0
+
+enquanto opcao != 3:
+    menu()
+    opcao = menu()
+    se opcao == 1:
+        entrada("Insira o nome do produto:", nome)
+        se nome em produtos.chaves():
+            total = total + produtos[nome]
+            continua()
+        imprime("Produto invalido.")
+    se opcao == 2:
+        entrada("Insira o nome do produto:", nome)
+        se nome em produtos.chaves():
+            total = total - produtos[nome]:
+            continua()            

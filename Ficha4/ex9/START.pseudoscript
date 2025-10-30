@@ -1,0 +1,98 @@
+modelo Item:
+    construtor(nome, descricao, quantidade, preco):
+        Item.nome = nome
+        Item.descricao = descricao
+        Item.quantidade = quantidade
+        Item.preco = preco
+        
+
+modelo Lista:
+    construtor(Item):
+        Lista.items = []
+    
+    funcao adicionarItem(item):
+        Lista.items.adicionar(item)
+
+    funcao listarItem():
+        retorne "Lista de Items."
+        cada item em Lista.items:
+            retorne items
+
+    funcao eliminarItem(nome):
+        novaLista = []
+        cada item em Lista.items:
+            se item.nome == nome:
+                continua()
+            novaLista.adicionar(item)
+        Lista.items = novaLista
+    
+        retorne "Item eliminado"
+    
+    funcao alterarItem(nome, item):
+        novaLista = []
+        se nome em Lista.items:
+            entrada("Descrição:", descricao)
+            entrada("Insira a quantidade:", quantidade)
+            se quantidade NAO INT:
+                entrada("Valor invalido, por favor tente novamente:", quantidade)
+                continua()
+            entrada("Insira o preço do Item:", preco)
+            se preco NAO INT OU preco NAO FLOAT:
+                entrada("Valor invalido, por favor tente novamente:", preco)
+                continua()
+            
+            cada valor em Lista.items:
+                se item.nome == nome:
+                    continua()
+                novaLista.adicionar(item)
+            Lista.items = novaLista
+
+            i = Item(nome, descricao, quantidade, preco)
+            lista.adicionarItem(i)
+
+            retorna "Item alterado com sucesso."
+
+
+funcao menu():
+    entrada("Bem vindo ao Inventory Management:
+        1-Adicionar Item:
+        2-Remover Item:
+        3-Listar Items:
+        4-Sair
+        R:", opcao)
+
+    retorne opcao
+
+
+
+lista = []
+lista = lista()
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        entrada("Insira o nome do produto:", nome)
+        entrada("Descrição:", descricao)
+        entrada("Insira a quantidade:", quantidade)
+        se quantidade NAO INT:
+            entrada("Valor invalido, por favor tente novamente:", quantidade)
+            continua()
+        entrada("Insira o preço do Item:", preco)
+        se preco NAO INT OU preco NAO FLOAT:
+            entrada("Valor invalido, por favor tente novamente:", preco)
+            continua()
+        
+        i = Item(nome, descricao, quantidade, preco)
+        lista.adicionarItem(i)
+        imprime("Item adicionado")
+        continua()
+    se opcao == 2:
+        entrada("Insira o nome do Item:", nome)
+        lista.eliminarItem(nome)
+        continua()
+    se opcao == 3:
+        lista.listarItem()
+        entrada("Deseja alterar algum Item?(Y/N)", resposta)
+        se resposta == "Y":
+            entrada("Insira o nome do Item", nome)
+            

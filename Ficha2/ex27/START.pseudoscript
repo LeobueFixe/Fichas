@@ -1,0 +1,20 @@
+imprime("Este programa vai criar uma matriz com os dados inseridos.")
+verificacao = false
+contadorC = 0
+contadorL = 0
+
+matriz[3][3] = [[],[],[]]
+enquanto verificacao == false:
+    enquanto contadorC < 3:
+        enquanto contadorL < 3:
+            entrada("Insira o {contadorL+1} número da coluna {contadorC+1}:", numero)
+            se numero NAO INT:
+                entrada("Por favor insira um número inteiro:", numero)
+            senao:
+                matriz[contadorC][contadorL].adicionar(numero)
+                contadorL++
+        contadorC++
+    verificacao == true
+
+imprime("A matriz ficou assim: {matriz}")
+    

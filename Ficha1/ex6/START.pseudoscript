@@ -1,0 +1,9 @@
+entrada("Insira um número", numero)
+
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se numero%5 == 0:
+        imprime("O número é múltiplo de 5.")
+    senao:
+        imprime("O número não é múltiplo de 5.")

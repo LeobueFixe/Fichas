@@ -1,0 +1,13 @@
+entrada("Insira um número:", numero)
+
+i = numero
+
+se numero Não INT OU numero < 0:
+    imprie("Tente novamente.")
+senao:
+
+    enquanto i < 1:
+        total = total + (numero * i)
+        i--
+    
+    imprime("O fatorial de {numero} é {total}.")

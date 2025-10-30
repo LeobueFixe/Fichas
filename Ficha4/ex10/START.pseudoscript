@@ -1,0 +1,189 @@
+modelo Reserva:
+    contrutor(nome, hotel, quarto, preco, data_entrada, data_saida)
+        Reserva.nome = nome
+        Reserva.hotel = hotel
+        Reserva.quarto = quarto
+        Reserva.preco = preco
+        Reserva.data_entrada = data_entrada
+        Reserva.data_saida = data_saida
+    
+
+modelo Lista_Reservas:
+    construtor(Reserva, Hoteis):
+        Lista.reservas = []
+
+    
+    funcao criarReserva(reserva):
+        Lista.reservas.adicionar(reserva)
+
+    funcao eliminarReserva(nome):
+        novaLista = []
+        cada reserva em Lista.reservas:
+            se reserva.nome == nome:
+                continua()
+            novaLista.adicionar(reserva)
+        Lista.reservas = novaLista
+    
+        retorne "Reserva eliminada"
+    
+    funcao alterarReserva(nome):
+        novaLista = []
+        se nome em Lista.reservas:
+            entrada("Hotel:", hotel)
+            entrada("Insira a quantidade:", quantidade)
+            se quantidade NAO INT:
+                entrada("Valor invalido, por favor tente novamente:", quantidade)
+                continua()
+            entrada("Insira o preço do Item:", preco)
+            se preco NAO INT OU preco NAO FLOAT:
+                entrada("Valor invalido, por favor tente novamente:", preco)
+                continua()
+            
+            cada valor em Lista.items:
+                se item.nome == nome:
+                    continua()
+                novaLista.adicionar(item)
+            Lista.items = novaLista
+
+            i = Item(nome, descricao, quantidade, preco)
+            lista.adicionarItem(i)
+
+            retorna "Item alterado com sucesso."
+
+
+modelo Hoteis:
+    construtor():
+        Hoteis.dicionario = (
+            "Hotel Atlântico" -> (
+                "check_in" -> "09:00 até 12:00",
+                "check_out" -> "07:00 até 10:00",
+                "quartos" -> (
+                    "Quarto 101" -> (
+                        "tipo" -> "Single",
+                        "preco_noite" -> 80,
+                        "disponivel" -> True
+                    ),
+                    "Quarto 102" -> (
+                        "tipo" -> "Duplo",
+                        "preco_noite" -> 120,
+                        "disponivel" -> False
+                    ),
+                    "Suite 201" -> (
+                        "tipo" -> "Suite Luxo",
+                        "preco_noite" -> 250,
+                        "disponivel" -> True
+                    )
+                )
+            ),
+
+            "Hotel Serra Verde" -> (
+                "check_in" -> "10:00 até 13:00",
+                "check_out" -> "08:00 até 11:00",
+                "quartos" -> (
+                    "Quarto 01" -> (
+                        "tipo" -> "Duplo",
+                        "preco_noite" -> 100,
+                        "disponivel" -> True
+                    ),
+                    "Quarto 02" -> (
+                        "tipo" -> "Casal",
+                        "preco_noite" -> 130,
+                        "disponivel" -> True
+                    ),
+                    "Suite 10" -> (
+                        "tipo" -> "Suite Montanha",
+                        "preco_noite" -> 220,
+                        "disponivel" -> False
+                    )
+                )
+            ),
+
+            "Hotel do Sol" -> (
+                "check_in" -> "08:30 até 11:30",
+                "check_out" -> "07:00 até 10:30",
+                "quartos" -> (
+                    "Quarto 1A" -> (
+                        "tipo" -> "Individual",
+                        "preco_noite" -> 75,
+                        "disponivel" -> True
+                    ),
+                    "Quarto 2B" -> (
+                        "tipo" -> "Casal",
+                        "preco_noite" -> 115,
+                        "disponivel" -> False
+                    ),
+                    "Suite 3C" -> (
+                        "tipo" -> "Suite Vista Mar",
+                        "preco_noite" -> 260,
+                        "disponivel" -> True
+                    )
+                )
+            )
+        )
+
+
+funcao mostrarHoteis(Hoteis):
+    imprime("=== LISTA DE HOTÉIS ===")
+
+    cada nome_hotel, dados_hotel em Hoteis.dicionario:
+        imprime("Hotel: {nome_hotel}")
+        imprime("  Check-in disponível entre {dados_hotel['check_in']}")
+        imprime("  Check-out disponível entre {dados_hotel['check_out']}")
+        imprime("  Quartos:")
+
+        cada nome_quarto, detalhes_quarto em dados_hotel["quartos"]:
+            imprime("    {nome_quarto}:")
+            imprime("        Tipo: {detalhes_quarto['tipo']}")
+            imprime("        Preço por noite: {detalhes_quarto['preco_noite']}€")
+            
+            se detalhes_quarto["disponivel"] == True:
+                imprime("        Disponível: Sim")
+            senao:
+                imprime("        Disponível: Não")
+
+        imprime(" ")
+
+funcao menu():
+    entrada("Bem vindo ao Inventory Management:
+        1-Adicionar Item:
+        2-Remover Item:
+        3-Listar Items:
+        4-Sair
+        R:", opcao)
+
+    retorne opcao
+
+funcao criarReserva():
+    entrada()
+
+lista = []
+lista = lista()
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        entrada("Insira o nome do produto:", nome)
+        entrada("Descrição:", descricao)
+        entrada("Insira a quantidade:", quantidade)
+        se quantidade NAO INT:
+            entrada("Valor invalido, por favor tente novamente:", quantidade)
+            continua()
+        entrada("Insira o preço do Item:", preco)
+        se preco NAO INT OU preco NAO FLOAT:
+            entrada("Valor invalido, por favor tente novamente:", preco)
+            continua()
+        
+        i = Item(nome, descricao, quantidade, preco)
+        lista.adicionarItem(i)
+        imprime("Item adicionado")
+        continua()
+    se opcao == 2:
+        entrada("Insira o nome do Item:", nome)
+        lista.eliminarItem(nome)
+        continua()
+    se opcao == 3:
+        lista.listarItem()
+        entrada("Deseja alterar algum Item?(Y/N)", resposta)
+        se resposta == "Y":
+            entrada("Insira o nome do Item", nome)
+            

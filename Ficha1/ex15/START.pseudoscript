@@ -1,0 +1,9 @@
+entrada("Insira o ano:", ano)
+
+se ano NÃO INT:
+    imprime("Tente novamente.")
+senao:
+    se ano%2 == 0:
+        imprime("É um ano primo.")
+    senao:
+        imprime("Não é um ano primo.")

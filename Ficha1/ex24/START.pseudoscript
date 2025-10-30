@@ -1,0 +1,21 @@
+entrada("Insira um número:", numero)
+lista = []
+
+se numero NÃO INT:
+    imprime("Tente novamente")
+senao:
+#guarda os valores
+    separar cada numero e guardar em lista
+    comprimento = tamanho(lista)
+    i = 0
+    total = 0
+#faz as contas
+    enquanto i < comprimento:           #aqui isto vai ficar a repetir ate que o contador seja igual ou maior do que o total de digitos
+        total = total + (lista[i] ^ comprimento)        #vai somar o valor dos 3 digitos elevados ao total de digitos 
+        i++
+
+ #apresenta os resultados   
+    se total == numero: 
+        imprime("O número pertence aos números Armstrong.")
+    senao: 
+        imprime("O número não pertence aos números Armstrong.")

@@ -1,0 +1,13 @@
+entrada("Insira a sua idade:", idade)
+
+se idade NÃO INT OU FLOAT OU idade < 0:
+    imprime("Tente novamente.")
+senao:
+    se 0 < idade < 12:
+        imprime("Criança")
+    senao 13 < idade < 17:
+        imprime("Adolescente")
+    senao 18 < idade < 59:
+        imprime("Adulto")
+    senao idade > 60:
+        imprime ("Idoso")

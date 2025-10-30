@@ -1,0 +1,22 @@
+lista = [32,47,87,31,12,99,69,642,89]
+cI = 0
+
+imprime("Esta é a lista: {lista}.")
+
+funcao pesquisa(numero):
+    enquanto lista[cI] != numero:
+        se lista[cI] == numero:
+            retorne cI
+        senao:
+            cI++
+
+
+enquanto numero NAO INT:
+    entrada("Insira o número que quer encontrar:", numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao numero em lista = false:
+        entrada("Esse número não esta na lista, tente outro:", numero)
+    
+pesquisa(numero)
+imprime("O valor inserido esta na posição {i+1} da lista.")

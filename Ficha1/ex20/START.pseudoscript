@@ -1,0 +1,23 @@
+entrada("Insere uma palavra ou uma sequencia de numeros:", palavra)
+sequencia = []
+separar cada caracter e guardar em sequencia[]
+quantidade = tamanho(sequencia)
+
+i = 0
+l = -1
+diferentes = 0
+iguais = 0
+
+enquanto i < quantidade:
+    se sequencia[i] == sequencia[l]:
+        iguais++
+    senao:
+        diferentes++
+
+    i++
+    l--
+    
+se diferentes == 0:
+    imprime("É um palíndromo.")
+senao:
+    imprime("Não é um palíndromo.")

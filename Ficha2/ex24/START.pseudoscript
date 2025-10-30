@@ -1,0 +1,86 @@
+imprime("Este programa vai ordenar a lista de forma crescente, e vai fazer uma busca de forma binaria pelo número escolhido.")
+lista = []
+listaPrograma = [123,3215,2132,54,2,321,43671,69,65,231,3,213,45,48,465,464,65465,46,23]
+listaCrescente = []
+tamanhoListaP = tamanho(listaPrograma)
+cP = 0
+posicao = 0
+
+funcao ordenar(lista3, tamanhoLista3):
+    cI = 0
+    cL = 0
+    enquanto cL < tamanhoLista3:
+        listaCrescente.adicionar(cL)
+        enquanto cI < tamanhoLista3:
+            se listaCrescente[cL] em lista3:
+                se listaCrescente[cL] > lista3[cI]:     
+                    listaCrescente[cL] == lista3[cI]
+                cI++
+            senao:
+                listaCrescente[cL] == lista3[cI]
+                cI++
+        cL++
+    
+    tamanhoListaCrescente = tamanho(listaCrescente)
+    retorne listaCrescente, tamanhoListaCrescente
+
+funcao busca(listaCrescente, tamanhoListaCrescente, numero):
+    cI = tamanhoListaCrescente/2
+    cL = 1
+    resto = 0
+    enquanto listaCrescente[cI-1] =! numero:
+        se numero > listaCrescente[cI-1]:
+            resto = tamanhoListaCrescente%cL
+            se resto == 1:
+                cI = cI + ((tamanhoListaCrescente-1)/cL)
+            senao:
+                cI = cI + (tamanhoListaCrescente/cL)
+        senao numero < listaCrescente[cI-1]:
+            resto = tamanhoListaCrescente%cL
+            se resto == 1:
+                cI = cI -1 ((tamanhoListaCrescente-1)/cL)
+            senao:
+                cI = cI - (tamanhoListaCrescente/cL)
+        senao numero == listaCrescente[cI-1]:
+            posicao = cI
+        
+        cL = cL * 2
+
+    retorne posicao
+
+enquanto resposta NAO INT OU resposta > 2:
+    entrada("1-Criar uma lista/n2-Usar a lista do programa/nEscolha uma opção:", resposta)
+    se resposta == 1:
+        imprime("Insere varios valores, quando quiseres parar basta digitar STOP")
+
+        enquanto numero != "STOP":
+            entrada("Insira um número:", numero)
+            se numero NAO INT:
+                entrada("Por favor insira um número inteiro:", numero)
+            senao:
+                lista.adicionar(numero)
+
+        tamanhoLista = tamanho(lista)
+
+        enquanto cP < tamanhoLista:
+            lista3.adicionar(lista[cP])
+            cP++
+                        
+    senao resposta == 2:
+        imprime("Estes são os números da lista: {listaPrograma}")
+
+        enquanto cP < tamanhoListaP:
+            lista3.adicionar(listaPrograma[cP])
+            cP++
+
+    senao:
+        entrada("Por favor escolha uma das opções.", resposta)
+    
+tamanhoLista3 = tamanho(lista3)
+ordenar(lista3, tamanhoLista3)
+
+imprime("A Lista ficou assim: {listaCrescente}.")
+entrada("Agora escolha um número para o programa o encontrar e dizer em que posição esta./nInsira um número:", numero)
+
+busca(listaCrescente, tamanhoListaCrescente, numero)
+imprime("O número escolhido esta na posição {posicao}")

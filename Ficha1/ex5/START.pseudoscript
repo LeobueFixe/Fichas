@@ -1,0 +1,15 @@
+entrada("Insira as 3 notas separado por um espaço:", numero)
+
+separar numero por " " e guardar em lista[]
+i = 0
+se numeros em lista[] NÃO INT OU FLOAT OU lista[3] == true:
+    imprime("Tente novamente.")
+senao:
+    enquanto i < 2:
+        media = media + lista[i]
+        i++
+
+    se media => 7:
+        imprime("O aluno foi aprovado")
+    senao:
+        imprime("O aluno reprovou")

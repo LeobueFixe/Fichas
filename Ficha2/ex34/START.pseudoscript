@@ -1,0 +1,31 @@
+imprime("Este programa vai mover os elementos da lista para a direita./n Insira dez numeros, e em seguida digite quantas vezes eles vão andar para o lado.")
+lista = []
+lista2 = []
+verificacao = false
+cI = 0
+
+funcao mover(move, lista):
+    cI = 0
+    enquanto cI < tamanho(lista):
+        lista2.adicionar(lista[cI + move])              
+
+    
+    retorne lista2
+
+enquanto cI < 10:
+    entrada("Insira o {i+1}º valor:", numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        lista.adicionar(numero)
+    cI++
+
+enquanto verificacao == false:
+    entrada("Quantas vezes os números vão se mover para a direita?", move)
+    se move NAO INT:
+        entrada("Por favor insira um número inteiro:", move)
+    senao
+        verificacao = true
+
+mover(move, lista)
+imprime("Esta é a nova lista: {lista2}")

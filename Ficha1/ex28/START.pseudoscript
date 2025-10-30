@@ -1,0 +1,26 @@
+entrada("Insira um número:", numero)
+
+primo_mersenne = false
+i = 0
+divisivel = 0
+
+funcao mersenne(numero):
+    num_mersenne = (2 ^ numero) - 1
+
+    enquanto i > num_mersenne:
+        i++
+        se num_mercsenne%i == 0:
+            divisivel++
+    se divisivel == 2:
+        primo_mersenne = true
+    
+    retorne primo_mersenne
+
+se numero NÃO INT OU numero < 0:
+    imprime("Tente novamente.")
+senao:
+    mersenne(numero)
+    se primo_mersenne == true:
+        imprime("É primo de mersenne.")
+    senao:
+        imprime("Não é primo de mersenne.")

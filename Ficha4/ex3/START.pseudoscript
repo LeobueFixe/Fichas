@@ -1,0 +1,80 @@
+modelo Tarefa:
+    construtor(nome, descricao):
+        Tarefa.nome = nome
+        Tarefa.descricao = descricao
+        Tarefa.concluida = false
+    
+    funcao adicionada():
+        retorne "Tarefa adicionada com sucesso."
+        
+
+modelo Lista:
+    construtor(Tarefa):
+        Lista.tarefas = []
+    
+    funcao adicionarTarefa(tarefa):
+        Lista.tarefas.adicionar(tarefa)
+
+    funcao imprimirTarefas():
+        retorne "Tarefas concluidas."
+        cada tarefa em Lista.tarefas:
+            se tarefa.concluida == true:
+                retorne tarefa.nome
+        
+        retorne "Tarefas por concluir"
+        cada tarefa em Lista.Tarefas:
+            se tarefa.concluida == false:
+                retorne tarefa.nome
+    
+    funcao eliminarTarefa(nome):
+        novaLista = []
+        cada tarefa em Lista.tarefas:
+            se tarefa.nome == nome:
+                continua()
+            novaLista.adicionar(tarefa)
+        Lista.tarefas = novaLista
+    
+        retorne "Tarefa eliminada"
+    
+    funcao concluirTarefa(nome):
+        cada tarefa em Lista.tarefas:
+            se tarefa.nome == nome:
+                tarefa.concluida == true
+            
+        retorne "Tarefa concluida"
+            
+funcao menu():
+    entrada("Bem vindo a lista de tarefas:
+        1-Adicionar tarefa
+        2-Eliminar tarefa
+        3-Concluir tarefa
+        4-Sair
+        R:", opcao)
+    
+    retorne opcao
+
+
+lista = []
+
+lista = Lista()
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        entrada("Insira o nome da tarefa: ", nome)
+        entrada("Insira a tarefa: ", descricao)
+        t = Tarefa(nome, descricao)
+        lista.adicionarTarefa(t)
+        imprime("Tarefa adicionada")
+        continua()
+    se opcao == 2:
+        entrada("Insira o nome da tarefa que deseja eliminar: ", nome)
+        lista.eliminarTarefa(nome)
+        continua()
+    se opcao == 3:
+        entrada("Insira o nome da tarefa que deseja marcar como concluida: ", nome)
+        lista.concluirTarefa(nome)
+        continua()
+
+
+        

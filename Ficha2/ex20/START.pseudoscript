@@ -1,0 +1,38 @@
+imprime("Este programa vai verificar a média de uma lista.")
+lista = []
+listaPrograma = [123,454,232,66,87,69,32,6788,332]
+tamanhoListaP = tamanho(listaPrograma)
+cI = 0
+total = 0
+media = 0
+
+enquanto resposta NAO INT OU resposta > 2:
+    
+    entrada("1-Criar uma lista/n2-Usar a lista do programa/nEscolha uma opção:", resposta)
+
+    se resposta == 1:
+        imprime("Insere varios valores, quando quiseres parar basta digitar STOP")
+
+        enquanto numero != "STOP":
+            entrada("Insira um número:", numero)
+            se 0 > numero OU NAO INT :
+                entrada("Por favor insira um número inteiro:", numero)
+            senao:
+                lista.adicionar(numero)
+                total = total + lista[-1] 
+
+        tamanhoLista = tamanho(lista)
+        media = total/tamanhoLista
+        imprime("A média desta lista é: {media}")
+
+    senao resposta == 2:
+        imprime("Estes são os números da lista: {listaPrograma}")
+
+        enquanto cI < tamanhoListaP:
+            total = total + lista[cI]
+
+        media = total/tamanhoListaP
+        imprime("A média desta lista é: {media}.")
+    
+    senao:
+        entrada("Por favor escolha uma das opções.", resposta)

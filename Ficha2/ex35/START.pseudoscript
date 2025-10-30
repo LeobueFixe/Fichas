@@ -1,0 +1,21 @@
+vogais = ["a", "e", "i", "o", "u"]
+lista = []
+vogal = 0
+cI = 0
+
+enquanto palavra != TEXTO:
+    entrada("Insira uma palavra:", palavra)
+    se palavra != TEXTO:
+        entrada("Por favor insira uma palavra", palavra)
+
+SEPARAR palavra em lista[]
+
+enquanto cI < tamanho(lista):
+    se lista[cI] em vogais:
+        vogal++
+    cI++
+
+se vogal == 1:
+    imprime("A palavra tem 1 vogal.")
+senao:
+    imprime("A palavra tem {vogal} vogais.")

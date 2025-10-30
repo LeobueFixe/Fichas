@@ -1,0 +1,37 @@
+imprime("Este programa vai transpor uma matrize.")
+verificacao = false
+matriz1[3][3] = [[],[],[]]
+cC = 0
+cL = 0
+
+funcao trasnpor(matriz):
+    matrizPrograma[3][3] = [[],[],[]]
+    cL = 0
+    cC = 0
+    enquanto cC < 3:
+        enquanto cL < 3:
+            matrizPrograma[cL][cC].adicionar(matriz[cC][cL])
+            cL++
+            
+        cL = 0
+        cC++
+
+    retorne matrizPrograma
+
+enquanto verificacao == false:
+    enquanto cC < linhas_colunas:
+        enquanto cL < linhas_colunas:
+            entrada("Insira um valor:", numero)
+            se numero NAO INT:
+                entrada("Por favor insira um número inteiro:", numero)
+            senao
+                matriz1[cC][cL].adicionar(numero)
+            cL++
+        cL = 0
+        cC++
+
+    verificacao = true
+
+somar(matriz1)
+
+imprime("A matriz ficou assim: {matrizPrograma}")

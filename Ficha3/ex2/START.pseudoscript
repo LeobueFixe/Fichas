@@ -1,0 +1,16 @@
+funcao contarLetras(frase):
+    letras = ()
+    cada caracter em frase:
+        se caracter em letras.chaves():
+            letras[caracter]++
+            continua()
+        
+        letras[caracter] = 1
+    
+    cada chave, valor em letras:
+        imprime("{chave}: {valor}")
+
+
+entrada("Insira uma frase:", frase)
+
+contarLetras(frase)

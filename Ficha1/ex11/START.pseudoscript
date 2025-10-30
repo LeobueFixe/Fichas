@@ -1,0 +1,19 @@
+entrada("Insira o seu peso(kg):", peso)
+entrada("Insira a sua altura(cm):", altura)
+
+se peso NÃO INT OU FLOAT OU altura NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    altura = altura / 100
+    imc = peso/(altura * altura)
+
+    se 18.5 < imc:
+        imprime("Abaixo do peso")
+    senao 24.9 > imc > 18.5:
+        imprime("Peso normal")
+    senao 29.9 > imc > 25:
+        imprime("Sobrepeso")
+    senao 39.9 > imc > 30:
+        imprime("Obsidade")
+    senao 40 < imc:
+        imprime("Obsidade Grave")

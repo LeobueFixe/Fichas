@@ -1,0 +1,71 @@
+funcao menu():
+    imprime("Bem vindo ao programa.")
+    entrada("
+        1-Adicionar produto.
+        2-Mostrar stock.
+        3-Sair.
+        R:", opcao)
+    
+    retorne opcao
+
+funcao adicionarProduto(produtos):
+    adicionar = (
+        'nome' -> nome,
+        'descricao' -> descricao,
+        'quantidade' -> quantidade,
+        'preco' -> preco)
+    
+    entrada("Nome:", nome)
+    entrada("Descrição:", descrição)
+    entrada("Quantidade:", quantidade)
+    entrada("Preço:", preco)
+    se quantidade NAO INT:
+        imprime("Erro tente novamente.")
+        continua()
+    produtos[nome] = adicionar
+
+    retorne produtos
+
+funcao alterarProduto(produtos):
+    entrada("Insira o nome do produto que deseja alterar:", nome)
+    cada chave, valor em produto:
+        se chave == nome:
+            imprime("{chave}: {valor.preco}€ {valor.quantidade}
+            {valor.descricao}")
+            adicionarProduto(produtos)
+            continua()
+
+    retorne produtos
+
+produtos = ()
+
+enquanto opcao != 3:
+    menu()
+    opcao = menu()
+    se opcao == 1:
+        produtos = adicionarProduto(produtos)
+        continua()
+    
+    se opcao == 2:
+        cada chave, valor em produtos:
+            imprime("{chave}: {valor}")
+            entrada("Escolha uma opção:
+                1-Eliminar produto.
+                2-Alterar produto.
+                3-Sair.
+                R:", opcao)
+            
+            se opcao == 1:
+                entrada("Insira o nome do produto:", nome)
+                novoProduto = ()
+                cada chave, valor em produtos:
+                    se chave == nome:
+                        continua()
+                    novoProduto[chave] = valor
+                produtos = novoProduto
+                continua()
+            se opcao == 2:
+                produtos = alterarProduto(produtos)
+                continua()
+
+    

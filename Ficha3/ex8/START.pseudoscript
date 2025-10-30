@@ -1,0 +1,11 @@
+entrada("Insira o ano em que nasceu", ano)
+entrada("Insira o ano em que estamos:", anoAtual)
+
+valido = false
+
+enquanto valido != true:
+    se ano NAO INT OU anoATual NAO INT:
+        imprime("Ano invalido")
+        continua()
+    imprime(anoAtual-ano)
+    valido = true

@@ -1,0 +1,14 @@
+traducao = ('Hello' -> 'Ola', 'Good Night' -> 'Boa Noite', 'Love' -> 'Amor')
+
+entrada("Insira uma palavra que o programa vai lhe mostrar a tradução", palavra)
+se palavra em traducao.valores() OU palavra em traducao.chaves():
+    cada chave, valor em traducao:
+        se valor == palavra:
+            imprime("{valor}: {chave}")
+            continua()
+        se chave == palavra:
+            imprime("{chave}: {valor}")
+            continua()
+senao:
+    imprime("Erro, palavra não reconhecida")
+

@@ -1,0 +1,20 @@
+imprime("Insere varios valores, quando quiseres parar basta digitar STOP")
+lista = []
+lista2 = []
+cI = 0
+
+enquanto numero != "STOP":
+    entrada("Insira um número:", numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        lista.adicionar(numero)
+
+tamanhoLista = tamanho(lista)
+
+enquanto cI < tamanhoLista:
+    se lista[cI] em lista2 == false:
+        lista2.adicionar(lista[cI])
+    cI++
+
+imprime("A lista sem números repetidos fica assim: {lista2}")

@@ -1,0 +1,13 @@
+entrada("Insira um número:", numero)
+
+total = 0
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    enquanto total > 2:
+        total = numero / 2
+
+    se total == 2:
+        imprime("O número é uma potência de 2.")
+    senao:
+        imprime("O número não é uma potência de 2.")

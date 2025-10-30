@@ -1,0 +1,8 @@
+ entrada("Insira a distancia percorrida em KM:", distancia)
+
+se distancia NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+
+    total = distancia * 1.50
+    imprime("O valor total a pagar é {total}")

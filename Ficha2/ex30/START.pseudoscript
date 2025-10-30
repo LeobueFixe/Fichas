@@ -1,0 +1,39 @@
+entrada("Este programa vai utilizar o metodo Bubble Sort para organizar a lista.")
+verificacao = false
+lista = []
+cI = 1
+
+funcao sort(lista):
+    tL = tamanho(lista)
+    temporaria = 0
+    cI = 1
+    ordenado = 1
+
+    enquanto verificacao == false:
+        enquanto cI < tL:
+            se lista[cI] < lista[cI - 1]:
+                temporaria = lista[cI]
+                lista[cI] = lista[cI - 1]
+                lista[cI - 1] = temporaria          1,2,3,4,5,6,7,8,9,10
+            senao:
+                ordenado++
+            cI++
+        se ordenado == tL:
+            verificacao = true
+        senao:
+            cI = 1
+            ordenado = 1
+    retorne lista
+
+enquanto cI < 11:
+    imprime("Insira 10 números.")
+    entrada("{cI}º valor:", numero)
+    se numero NAO INT:
+        entrada("Insira um valor inteiro:", numero)
+    senao:
+        lista.adicionar(numero)
+        cI++
+    
+sort(lista)
+imprime("A lista ficou assim {lista}.")
+

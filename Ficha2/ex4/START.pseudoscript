@@ -1,0 +1,9 @@
+lista = [1,2,3,4,5]
+imprime("Esta é a lista: {lista}")
+enquanto numero NAO INT:
+    entrada("Insira um número para substituir pelo {lista[2]:}",numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        lista[2] = numero
+        imprime("Esta é a nova lista: {lista}")

@@ -1,0 +1,47 @@
+modelo Quizz:
+    contrutor():
+        Quizz.dicionario = (
+            "Qual é a capital de França?" -> (
+                "Berlim" -> 0,
+                "Madrid" -> 0,
+                "Paris" -> 1,
+                "Roma" -> 0
+            ),
+
+            "Qual é o símbolo químico do ouro?" -> (
+                "Ag" -> 0,
+                "O" -> 0,
+                "Au" -> 1,
+                "G" -> 0
+            ),
+
+            "Quem pintou a Mona Lisa?" -> (
+                "Vincent van Gogh" -> 0,
+                "Leonardo da Vinci" -> 1,
+                "Pablo Picasso" -> 0,
+                "Michelangelo" -> 0
+            )
+        )
+        Quizz.pergunta_resposta = ()
+    
+    funcao respostas():
+        cada pergunta em Quizz.dicionario:
+            imprime(pergunta)
+            entrada("R:", resposta_user)
+
+            se dicionario[pergunta[resposta_user]] == 1:
+                Quizz.pergunta_resposta[pergunta] = (resposta_user -> "Certo")
+                continua()
+            cada resposta, esta_certo em Quizz.dicionario:
+                se esta_certo == 1:
+                    Quizz.pergunta_resposta[pergunta] = (resposta -> "Errado")
+
+
+        cada resposta em Quizz.pergunta_resposta:
+            se resposta == "Certo"
+                imprime("{pergunta_resposta.pergunta}: {pergunta_resposta[pergunta[opcao]]}/nResposta Certa:{pergunta_resposta[pergunta]}")
+            senao:
+                imprime("{pergunta_resposta.pergunta}: {pergunta_resposta[pergunta[opcao]]}/nResposta Certa:{pergunta_resposta[pergunta]}")
+
+user = Quizz()
+imprime(user.respostas)

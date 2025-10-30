@@ -1,0 +1,43 @@
+imprime("Este programa vai somar 2 matrizes.")
+verificacao = false
+matriz1[3][3] = [[],[],[]]
+matriz2[3][3] = [[],[],[]]
+cM = 0
+cC = 0
+cL = 0
+
+funcao somar(matriz1, matriz2):
+    matrizPrograma[3][3] = [[],[],[]]
+    cL = 0
+    cC = 0
+    enquanto cC < 3:
+        enquanto cL < 3:
+            matrizPrograma[cC][cL] = matriz1[cC][cL] + matriz2[cC][cL]
+            cL++
+        cL = 0
+        cC++
+
+    retorne matrizPrograma
+
+enquanto verificacao == false:
+    enquanto cM < 2:
+        enquanto cC < 3:
+            enquanto cL < 3:
+                entrada("Insira um valor:", numero)
+                se numero NAO INT:
+                    entrada("Por favor insira um número inteiro:", numero)
+                senao
+                    se cM == 0:
+                        matriz1[cC][cL].adicionar(numero)
+                    senao:
+                        matriz2[cC][cL].adicionar(numero)
+                    cL++
+            cL = 0
+            cC++
+        cM++
+
+    verificacao = true
+
+somar(matriz1,matriz2)
+
+imprime("A soma das duas matrizes é esta matriz: {matrizPrograma}")

@@ -1,0 +1,18 @@
+entrada("Insira um número positivo:", numero)
+
+se numero NÃO INT OU numero < 0:
+    imprime("Tente novamente:")
+senao:
+
+    i = 1
+    total = 0
+
+    enquanto total < numero:
+        total = 0
+        total = i ^ i
+        i = i + 0.0001
+    
+    se total == numero:
+        imprime("A raiz quadrada do número é {i}.")
+    senao total > numero:
+        imprime("O numero ")

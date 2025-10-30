@@ -1,0 +1,13 @@
+entrada("Insira um número:", numero)
+i = 0
+total = 0
+se numero NÃO INT:
+    imprime("Tente novamente.")
+senao:
+    enquanto numero < total:
+        total = total + i
+        i++
+    se numero == total:
+        imprime("O número é triangular.")
+    senao numero > total:
+        imprime("O número não é triangular.")            

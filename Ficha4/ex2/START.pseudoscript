@@ -1,0 +1,30 @@
+aleatorio()
+contador = 0
+imprime("Tente adivinhar o número.")
+imprime("Vamos ver qual medalha vais receber.
+Ouro - 5 tentativas
+Prata - 10 tentativas
+Bronze - +10 tentativas")
+
+modelo Tentativas:
+    contrutor(contador):
+        se contador <= 5:
+            Tentativas.rank  = "ouro"
+        se 5 < contador <= 10:
+            Tentativas.rank = "prata"
+        se contador > 10:
+            Tentativas.rank = "bronze"        
+        
+    funcao apresentar():
+        retorne "Parabens conseguiste o rank {Tentativas.rank}"
+
+enquanto numero != aleatorio:
+    entrada("R:", numero)
+    se numero < aleatorio:
+        imprime("O número é maior.")
+    se nummero > aleatorio:
+        imprime("O número é menor.")
+    contador++
+
+user = Tentativas(contador)
+imprime(user.apresentar())

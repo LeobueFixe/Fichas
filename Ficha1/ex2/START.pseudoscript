@@ -1,0 +1,9 @@
+entrada("Insira um número:", numero)
+
+se numero NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se numero%2 == 0:
+        imprime("É um número par.")
+    senao:
+        imprime("É um número impar.")

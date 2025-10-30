@@ -1,0 +1,2 @@
+lista = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado-do-descanso", "Domingo-da-missa"]
+imprime("Caso não saibas estes são os dias da semana {lista}")

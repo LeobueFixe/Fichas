@@ -1,0 +1,26 @@
+funcao menu()
+    entrada("Bem vindo ao conversor de temperaturas:
+        1-Celsius para Fahrenheit.
+        2-Fahrenheit para Celsius.
+        3-Sair
+        R:" , opcao)
+
+    retorne opcao
+
+modelo Conversao_Graus:
+    contrutor(opcao, temperatura):
+        Conversao_Graus.graus = temperatura
+
+    funcao graus():
+        se opcao == 1:
+            retorne "{Conversao_Graus.temperatura} graus Celsius equival a {(Conversao_Graus.temperatura * (9/5)) + 32} graus Fahrenheit"
+        se opcao == 2:
+            retorne "{Conversao_Graus.temperatura} graus Fahrenheit equival a {(Conversao_Graus.temperatura - 32) * (5/9)} Graus Celsius"
+
+enquanto opcao != 3:
+    opcao = menu()
+    menu()
+    entrada("Insira a temperatura: ", temperatura)
+
+    user = Conversao_Graus(opcao, temperatura)
+    imprime(user.graus())

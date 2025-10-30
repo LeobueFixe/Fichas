@@ -1,0 +1,25 @@
+entrada("Insira um número:", numero)
+
+i = 1
+divisivel = 0
+primo_fermat = false
+
+funcao fermat(numero):
+    num_fermat = (2 ^ (2 ^ numero)) + 1
+
+    enquanto i > num_fermat:
+        i++
+        se num_fermat%i == 0:
+            divisivel++
+    se divisivel == 2:
+        primo_fermat = true
+
+    retorne primo_fermat
+
+se numero NÃO INT OU numero < 0:
+    imprime("Tente novamente.")
+senao:
+    se primo_fermat == true:
+        imprime("É primo de fermat.")
+    senao:
+        imprime("Não é primo de fermat.")

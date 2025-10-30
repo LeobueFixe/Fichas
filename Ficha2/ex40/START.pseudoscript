@@ -1,0 +1,8 @@
+entrada("Este programa vai separar a tua frase por palavras e guardar em uma lista.")
+lista = []
+
+entrada("Insira um frase:", frase)
+
+SEPARAR frase por " " em lista
+
+imprime("{lista}.")

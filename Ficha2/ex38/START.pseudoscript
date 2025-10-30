@@ -1,0 +1,16 @@
+entrada("Este programa vai concatenar 2 palavras.")
+iC = 0
+lista = []
+
+
+enquanto iC < 2:
+    entrada("Insira a {iC+1}º palavra:", palavra)
+    se palavra != TEXTO:
+        entrada("Erro, tente novamente:", palavra)
+    senao:
+        lista.adicionar(palavra)
+    iC++
+
+concatenada = lista[]
+
+imprime("As duas palavras concatenadas fica {concatenada}.")

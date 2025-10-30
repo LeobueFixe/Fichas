@@ -1,0 +1,31 @@
+imprime("Este programa vai verificar se um array esta ordenado.")
+imprime("Insira varios valores, quando quiser parar basta digitar STOP.")
+lista = []
+cO = 1
+cI = 1
+ordenado = false
+
+funcao verificarOrdem(lista, tamanhoLista):
+    cI = 1
+    enquanto cI < tamanhoLista:
+        se lista[cI-1] < lista[cI]:
+            cO++
+
+    se cO == tamanhoLista:
+        ordenado = true
+
+    retorne ordenado
+
+enquanto numero != "STOP":
+    entrada("Insira um número:", numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        lista.adicionar(numero)
+
+tamanhoLista = tamanho(lista)
+verificarOrdem(lista, tamanhoLista)
+se ordenado == true:
+    imprime("A lista esta ordenada.")
+senao:
+    imprime("A lista não esta ordenada.")

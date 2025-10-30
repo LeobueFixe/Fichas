@@ -1,0 +1,14 @@
+entrada("Insira um número inteiro positivo:", numero)
+lista = [0, 1]
+
+se numero NÃO INT OU numero < 0:
+    imprime("Tente novamente.")
+senao:
+
+    enquanto numero > lista[-1]
+        lista.adicionar(lista[-1] + lista[-2])
+
+    se numero == lista[-1]:
+        imprime("O número é um Fibonacci.")
+    senao numero < lista[-1]:
+        imprime("O número não é um Fibonacci.")

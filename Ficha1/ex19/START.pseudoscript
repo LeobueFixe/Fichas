@@ -1,0 +1,11 @@
+entrada("Insira o seu salário:", salario)
+
+se salario NÃO INT OU FLOAT:
+    imprime("Tente novamente.")
+senao:
+    se salario <= 1100.00:
+        total = salario - (salario * 0.11)
+        imprime("O seu salário total é de {total}.")
+    senao salario >= 1100.01:
+        total = salario - (salario * 0.275)
+        imprime("O seu salário total é de {total}.")

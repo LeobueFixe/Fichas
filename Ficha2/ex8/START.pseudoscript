@@ -1,0 +1,8 @@
+lista = [1,2,3,4,5]
+enquanto numero Não INT OU FLOAT:
+    entrada("Insira um número.", numero)
+    se numero NAO INT OU FLOAT:
+        entrada("Por favor insira um número:", numero)
+    senao:
+        se numero em lista:
+            imprime("O número esta na lista.")

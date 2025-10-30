@@ -1,0 +1,42 @@
+funcao menu():
+    entrada("Bem vindo a gestão de programas
+        1-Adicionar projeto
+        2-Remover projeto
+        3-Mostrar projetos
+        4-sair
+        R:", opcao)
+    
+    retorne opcao
+
+projetos = ()
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        tarefas = []
+        entrada("Nome:", nome)
+        entrada("Descriçao:", descricao)
+        enquanto resposta != 'S'
+            entrada("Insira todas as tarefas que quiser, quando acabar basta escrever (S)", tarefa)
+            tarefas.adicionar(tarefa)
+        se nome NAO TEXTO:
+            entrada("Erro insira outro nome:", nome)
+            continua()
+        projetos[nome] = ('nome' -> nome, 'descricao' -> decricao, 'tarefas' -> tarefas)
+        continua()
+    se opcao == 2:
+        eliminar = ()
+        entrada("Insira o projeto que deseja eliminar:", nome)
+        se nome EM projetos.chaves():
+            cada chave, valor em projetos:
+                se chave == nome:
+                    continua()
+                eliminar[chave] = valor
+            
+            projetos = eliminar
+            continua()
+    se opcao == 3:
+        cada chave, valor em projetos:
+            imprime('{valor.nome}: {valor.tarefas}
+                    {valor.descricao}')
+        continua()

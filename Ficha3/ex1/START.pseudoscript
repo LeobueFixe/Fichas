@@ -1,0 +1,55 @@
+funcao menu():
+    enquanto 0 > opcao > 3: 
+        entrada("Bem vindo ao programa.
+                1-Adicionar novo contato.
+                2-Mostrar todos os contatos.
+                3-Sair.
+                
+                Escolha uma opção:", opcao)
+            
+        se 1 > opcao > 3:
+            entrada("Opção invalida. Tente novamente")
+            continua()
+        
+    retorne opcao:
+
+funcao adicionarContato(lista):
+    entrada("Nome::", nome)
+    entrada("Apelido:", apelido)
+    entrada("Número:", numero)
+    entrada("Morada:", morada)
+    entrada("Email:", email)
+
+    nomeCompleto = "{nome} {apelido}"
+    se numero NAO INT:
+        entrada("Por favor insira um número valido:", numero)
+        continua()
+    se nomeCompleto EM lista.chaves():
+        entrada("O contato {nomeCompleto} ja existe na lista.")
+        continua()
+    
+    lista[nomeCompleto] = ('nome' -> nome, 'apelido' -> apelido, 'numero' -> numero, 'morada' -> morada, 'email' -> email)
+    imprime("Contato adicionado.")
+
+    
+funcao mostrarContatos(lista):
+    cada valor em lista.valores():
+        imprime("
+        {valor.nome} {valor.apelido}
+        {valor.numero}
+        {valor.email}
+        {valor.morada}")
+    
+
+enquanto opcao =! 3:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        adicionarContato(lista)
+        continua()
+    se opcao == 2:
+        mostrarContatos(lista)
+        continua()
+
+
+    

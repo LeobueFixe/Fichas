@@ -1,0 +1,15 @@
+lista1 = [1,2,3,4,5]
+lista2 = [6,7,8,9,10]
+lista3 = []
+
+imprime("Escolha dois numeros para somar, um de cada lista: {lista1} {lista2}")
+enquanto numero1,numero2 NAO INT E numero1 em lista1 == false OU numero2 em lista2 == false:
+    entrada("Escolha o número da 1º lista:", numero1)
+    entrada("Escolha o número da 2º lista:", numero2)
+    se numero1 em lista1 == false OU numero2 em lista2 == false E numero1,numero2 NAO INT:
+        imprime("Por favor escolha números que estejam nas respetivas listas.")
+        entrada("Escolha o número da 1º lista:", numero1)
+        entrada("Escolha o número da 2º lista:", numero2)
+    senao:
+        lista3.adicionar(numero1+numero2)
+        imprime("A soma dos dois elementos é de {lista3[-1]}")

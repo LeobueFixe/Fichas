@@ -1,0 +1,16 @@
+imprime("Escolha um número da lista e o programa vai dizer em que posição esta da lista. /nlista: {lista}")
+lista = [123,54,6,32,21,5,7,76,87,89,43,2,7892]
+tamanhoLista = tamanho(lista)
+cI = 0
+
+enquanto resposta NAO INT OU numero em lista == false:
+    entrada("Insira um número que esteja na lista", numero):
+    se numero NAO INT OU numero em lista == false:
+        entrada("Por favor insira um número da lista:", numero)
+    senao:
+        enquanto 1 < tamanhoLista:
+            se numero == lista[cI]:
+                posicao = cI+1
+            cI++
+
+imprime("O número esta na posição {posicao}.")

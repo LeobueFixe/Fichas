@@ -1,0 +1,49 @@
+funcao menu():
+    entrada("Bem vindo ao programa:
+        1-Ver saldo.
+        2-Depositar dinheiro.
+        3-Registrar receita.
+        R: ", opcao)
+    
+    retorne opcao
+
+saldoTotal = 0
+despesas_receitas = ()
+
+enquanto opcao != 4:
+    opcao = menu()
+    menu()
+    se opcao == 1:
+        imprime(saldo)
+        continua()
+    se opcao == 2:
+        entrada("Insira a quantidade que deseja inserir:", dinheiro)
+        se dinheiro NAO INT OU dinheiro NAO FLOAT:
+            entrada("Valor invalido, por favor tente novamente.", dinheiro)
+            continua()
+        saldo = saldo + dinheiro
+        continua()
+    se opcao == 3:
+        entrada("Escolha uma opção:
+            1-Adicionar nova despesa.
+            2-Adicionar nova receita.
+            R:", resposta)
+        se resposta NAO INT:
+            imprime("Opção invalida.")
+            continua()
+        se resposta == 1:
+            entrada("Insira o nome da despesa: ", nome)
+            entrada("Insira o valor da despesa: ", valor)
+            se nome NAO TEXTO E valor NAO INT OU valor NAO FLOAT:
+                imprime("Dados invalidos.")
+                continua()
+            despesas_receitas('despesa') = ('nome' -> nome, 'valor' -> valor)
+            saldo = saldo - valor
+        se resposta == 2:
+            entrada("Insira o nome da receita: ", nome)
+            entrada("Insira o valor da receita: ", valor)
+            se nome NAO TEXTO E valor NAO INT OU valor NAO FLOAT:
+                imprime("Dados invalidos.")
+                continua()
+            despesas_receitas('receita') = ('nome' -> nome, 'valor' -> valor)
+            saldo = saldo - valor

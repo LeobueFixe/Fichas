@@ -1,0 +1,11 @@
+entrada("Insira o maior angulo do triângulo:", angulo)
+
+se angulo NÃO INT ou angulo NÃO FLOAT ou E angulo < 180:
+    imprime("Tenta novamente.")
+senao:
+    se angulo > 90:
+        imprime("É um triângulo retângulo.")
+    senao angulo == 90:
+        imprime("É um triângulo obtusângulo.")
+    senao:
+        imprime("É um triãngulo acutângulo.")

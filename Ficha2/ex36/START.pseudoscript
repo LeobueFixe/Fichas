@@ -1,0 +1,19 @@
+invertida = []
+lista = []
+cI = 0
+cL = -1
+
+enquanto palavra != TEXTO:
+    entrada("Insira uma palavra:", palavra)
+    se palavra != TEXTO:
+        entrada("Por favor insira uma palavra", palavra)
+
+SEPARAR palavra em lista[]
+
+enquanto cI < tamanho(lista):
+    invertida[cI] = lista[cL]
+    cL--
+    cI++
+
+palavra_invertida = invertida[]
+imprime("A palavra invertida fica {palavra_invertida}")

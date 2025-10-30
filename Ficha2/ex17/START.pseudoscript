@@ -1,0 +1,23 @@
+imprime("Insira varios números, quando quiser parar basta digitar STOP.")
+lista = []
+cI = -1
+funcao dofim(lista):
+    tam = tamanho(lista)*-1
+    listaContraria = []
+    enquanto cI > tam-1:
+        listaContraria.adicionar(lista[cI])
+        cI--
+
+    retorne listaContraria
+
+enquanto numero != "STOP":
+    entrada("Insira um número:", numero)
+    se numero NAO INT:
+        entrada("Por favor insira um número inteiro:", numero)
+    senao:
+        lista.adicionar(numero)
+        cI++
+    
+dofim(lista)
+imprime("Lista a contar do fim:{listaContraria}")
+    

@@ -1,0 +1,18 @@
+entrada("Insira um número:", numero)
+
+se numero NÃO INT OU numero < 0:
+    imprime("Tente novamente.")
+senao:
+
+    i = 0
+    total = 0
+
+    enquanto total < numero:
+        i++
+        total = 0
+        total = i * i
+    
+    se total == numero:
+        imprime("O número é um quadrado perfeito.")
+    senao:
+        imprime("O número não é um quadrado perfeito.")

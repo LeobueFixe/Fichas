@@ -1,0 +1,9 @@
+entrada("Insira um número inteiro:", numero)
+
+se numero NÃO INT:
+    imprime("Tente novamente.")
+senao:
+    se numero%5 == 0 E numero%3 == 0:
+        imprime("O número é divisível por 5 e por 3.")
+    senao:
+        imprime("O número não é divisível por 5 nem por 3.")

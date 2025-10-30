@@ -1,0 +1,2 @@
+lista = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Subcidio de ferias","Agosto","Setembro","Outubro","Novembro","Dezembro", "Subcidio de natal"]
+imprime("Estes são todos os meses do ano: {lista}")
