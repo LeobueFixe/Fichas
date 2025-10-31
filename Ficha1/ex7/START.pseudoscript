@@ -1,13 +1,13 @@
 entrada("Insira um número:", numero)
 
-i = 0
+contador = 0
 divisiveis = 0
 primo = false
 
 funcao num_primo(numero):
-    enquanto i > numero:
-        i++
-        se numero%i == 0:
+    enquanto contador > numero:
+        contador++
+        se numero%contador == 0:
             divisiveis++
 
     se divisiveis == 2:
