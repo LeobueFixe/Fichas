@@ -7,12 +7,12 @@ senao:
 #guarda os valores
     separar cada numero e guardar em lista
     comprimento = tamanho(lista)
-    i = 0
+    contador = 0
     total = 0
 #faz as contas
-    enquanto i < comprimento:           #aqui isto vai ficar a repetir ate que o contador seja igual ou maior do que o total de digitos
-        total = total + (lista[i] ^ comprimento)        #vai somar o valor dos 3 digitos elevados ao total de digitos 
-        i++
+    enquanto contador < comprimento:           #aqui isto vai ficar a repetir ate que o contador seja igual ou maior do que o total de digitos
+        total = total + (lista[contador] ^ comprimento)        #vai somar o valor dos 3 digitos elevados ao total de digitos 
+        contador++
 
  #apresenta os resultados   
     se total == numero: 
