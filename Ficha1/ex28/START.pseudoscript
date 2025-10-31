@@ -1,15 +1,15 @@
 entrada("Insira um número:", numero)
 
 primo_mersenne = false
-i = 0
+contador = 0
 divisivel = 0
 
 funcao mersenne(numero):
     num_mersenne = (2 ^ numero) - 1
 
-    enquanto i > num_mersenne:
-        i++
-        se num_mercsenne%i == 0:
+    enquanto contador > num_mersenne:
+        contador++
+        se num_mercsenne%contador == 0:
             divisivel++
     se divisivel == 2:
         primo_mersenne = true
