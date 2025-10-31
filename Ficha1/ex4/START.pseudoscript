@@ -1,14 +1,17 @@
-entrada("Insira dois números separado por um espaço:", numero)
-
 lista = []
-separar numero por " " e guardar em lista[]
+valido = false
 
-se numeros em lista NÃO INT OU FLOAT OU lista[2] == true:
-    imprime("Tente novamente.")
+enquanto valido = false:
+    entrada("Insira o primeiro número:", numero1)
+    entrada("Insira o segundo número:", numero2)
+    se numero2 NAO INT OU numero2 NAO FLOAT OU numero1 NAO INT OU numero1 NAO FLOAT:
+        imprime("Erro, tente novamente.")
+        continua()
+    valido = true
+
+se lista[0] < lista[1]:
+    imprime("O maior número é:{lista[1]}.")
+senao numero1 > numero2:
+    imprime("O maior número é:{lista[0]}.")
 senao:
-    se lista[0] < lista[1]:
-        imprime("O maior número é:{lista[1]}.")
-    senao numero1 > numero2:
-        imprime("O maior número é:{lista[0]}.")
-    senao:
-        imprime("Os números são iguais.")
+    imprime("Os números são iguais.")
