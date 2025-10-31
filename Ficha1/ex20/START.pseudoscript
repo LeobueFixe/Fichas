@@ -1,21 +1,19 @@
 entrada("Insere uma palavra ou uma sequencia de numeros:", palavra)
-sequencia = []
-separar cada caracter e guardar em sequencia[]
-quantidade = tamanho(sequencia)
+quantidade = tamanho(palavra)
 
-i = 0
-l = -1
+contadorPositivo = 0
+contadorNegativo = -1
 diferentes = 0
 iguais = 0
 
-enquanto i < quantidade:
-    se sequencia[i] == sequencia[l]:
+enquanto contadorPositivo < quantidade:
+    se sequencia[contadorPositivo] == sequencia[contadorNegativo]:
         iguais++
     senao:
         diferentes++
 
-    i++
-    l--
+    contadorPositivo++
+    contadorNegativo--
     
 se diferentes == 0:
     imprime("É um palíndromo.")
