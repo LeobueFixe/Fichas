@@ -1,13 +1,13 @@
 entrada("Insira um número:", numero)
 
-i = numero
+contador = numero
 
 se numero Não INT OU numero < 0:
     imprie("Tente novamente.")
 senao:
 
-    enquanto i < 1:
-        total = total + (numero * i)
-        i--
+    enquanto contador < 1:
+        total = total + (numero * contador)
+        contador--
     
     imprime("O fatorial de {numero} é {total}.")
