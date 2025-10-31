@@ -1,11 +1,23 @@
-entrada("Insira o maior angulo do triângulo:", angulo)
+lista = []
+valido = false
+maior_angulo = 0
 
-se angulo NÃO INT ou angulo NÃO FLOAT ou E angulo < 180:
-    imprime("Tenta novamente.")
+enquanto valido = false:
+    entrada("Insira o valor do angulo:", angulo)
+    se angulo NAO INT OU angulo NAO FLOAT:
+        entrada("Valor invalido, por favor tente novamente:", angulo)
+        continua()    
+    lista.adicionar(angulo)
+    se tamanho(lista) == 3:
+        valido = true
+
+cada valor em lista:
+    se valor > maior_angulo:
+        maior_angulo = valor
+
+se maior_angulo > 90:
+    imprime("É um triângulo retângulo.")
+senao maior_angulo == 90:
+    imprime("É um triângulo obtusângulo.")
 senao:
-    se angulo > 90:
-        imprime("É um triângulo retângulo.")
-    senao angulo == 90:
-        imprime("É um triângulo obtusângulo.")
-    senao:
-        imprime("É um triãngulo acutângulo.")
+    imprime("É um triãngulo acutângulo.")
