@@ -1,14 +1,16 @@
-entrada("Insere o valor dos 3 lados separados por um espaço:", lados)
-
 lista = []
-separar lados por " " guardar em lista[]
 
-se numeros em lista NÃO INT OU FLOAT OU lista[3] == true:
-    imprime("Tente novamente.")
+enquanto valido == false:
+    entrada("Insere o valor de um lado:", lado)
+    se lado NAO INT OU lado NAO FLOAT:
+        entrada("Valor Invalido, por favor tente novamente:", lado)
+        continua()
+    lista.adicionar(lado)
+
+
+se lista[0] == lista[1] == lista[2]:
+    imprime("É um triângulo equilátero.")
+senao lista[0] == lista[1] OU lista[1] == lista[2] OU lista[0] == lista[2]:
+    imprime("É um triângulo isósceles")
 senao:
-    se lista[0] == lista[1] == lista[2]:
-        imprime("É um triângulo equilátero.")
-    senao lista[0] == lista[1] OU lista[1] == lista[2] OU lista[0] == lista[2]:
-        imprime("É um triângulo isósceles")
-    senao:
-        imprime("É um triângulo escaleno")
+    imprime("É um triângulo escaleno")
