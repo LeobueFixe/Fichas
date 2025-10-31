@@ -1,4 +1,5 @@
 lista = []
+valido = false
 
 enquanto valido == false:
     entrada("Insere o valor de um lado:", lado)
@@ -6,6 +7,7 @@ enquanto valido == false:
         entrada("Valor Invalido, por favor tente novamente:", lado)
         continua()
     lista.adicionar(lado)
+    valido = true
 
 
 se lista[0] == lista[1] == lista[2]:
