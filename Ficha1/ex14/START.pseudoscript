@@ -1,16 +1,16 @@
 entrada("Insira um número inteiro:", numero)
 
-i = 1
+contador = 1
 total = 0
 
 se numero NÃO INT:
     imprime("Tente novamente.")
 senao:
 
-    enquanto i < numero:
+    enquanto contador < numero:
         se numero%i == 0:
-            total = total + i
-        i++
+            total = total + contador
+        contador++
 
     se total == numero:
         imprime("É um número perfeito.")
