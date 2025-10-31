@@ -4,13 +4,13 @@ se numero NÃO INT OU numero < 0:
     imprime("Tente novamente.")
 senao:
 
-    i = 0
+    contador = 0
     total = 0
 
     enquanto total < numero:
-        i++
+        contador++
         total = 0
-        total = i * i
+        total = contador * contador
     
     se total == numero:
         imprime("O número é um quadrado perfeito.")
