@@ -1,15 +1,17 @@
-entrada("Insira as 3 notas separado por um espaço:", numero)
+lista = []
+total = 0
 
-separar numero por " " e guardar em lista[]
-i = 0
-se numeros em lista[] NÃO INT OU FLOAT OU lista[3] == true:
-    imprime("Tente novamente.")
+enquanto tamanho(lista) < 3:
+    entrada("Insira uma nota", nota)
+    se nota NAO INT OU nota NAO FLOAT:
+        entrada("Nota invalida, por favor tente novamente:", nota)
+        continua()
+    lista.adicionar(nota)
+    total += nota
+
+media = total /  tamanho(lista)
+
+se media => 7:
+    imprime("O aluno foi aprovado")
 senao:
-    enquanto i < 2:
-        media = media + lista[i]
-        i++
-
-    se media => 7:
-        imprime("O aluno foi aprovado")
-    senao:
-        imprime("O aluno reprovou")
+    imprime("O aluno reprovou")
